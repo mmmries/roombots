@@ -27,10 +27,17 @@ div.row.explanation h5 {
   font-family: monospace;
   text-align: right;
 }
-
 div.row.explanation.message {
   margin-top: 30px;
   border-top: 2px dashed grey;
+}
+div.row h1,h2,h3,h4,h5 {
+  text-align: center;
+}
+.code {
+  font-family: monospace;
+  font-size: medium;
+  color: darkgrey;
 }
 
 /* Custom page header */
