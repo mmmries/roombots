@@ -17,6 +17,7 @@ defmodule Recruitbots.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/bots", BotCheckinController, :index
   end
 
   scope "/", Recruitbots do

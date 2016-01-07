@@ -1,0 +1,16 @@
+<div class="row">
+  <%= Enum.map(@bots, fn({name, bot}) -> %>
+    <div class="panel panel-default col-lg-3">
+      <div class="panel-heading">
+        <h2 class="panel-title"><%= name %></h2>
+      </div>
+      <div class="panel-body">
+        <h4>
+          <a href="http://<%= bot.local_ip %>/"><%= bot.local_ip %></a>
+        </h4>
+        Last heard from:
+        <%= bot.last_checkin_at |> Timex.Date.from(:timestamp) |> Timex.DateFormat.format!("%b %d %H:%M UTC", :strftime) %>
+      </div>
+    </div>
+  <% end) %>
+</div>
