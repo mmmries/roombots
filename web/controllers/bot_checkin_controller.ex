@@ -4,6 +4,6 @@ defmodule Recruitbots.BotCheckinController do
 
   def update(conn, params) do
     bot = BotCheckin.checkin(params)
-    render conn, bot
+    json conn, Map.take(bot, [:name, :local_ip])
   end
 end
