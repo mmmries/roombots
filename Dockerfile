@@ -1,4 +1,4 @@
-FROM hqmq/docker-elixir:1.1.0.0
+FROM hqmq/docker-elixir:1.1.1.0
 MAINTAINER Michael Ries <michael@riesd.com>
 
 EXPOSE 4000
