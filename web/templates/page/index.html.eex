@@ -35,6 +35,7 @@
   </div>
 </div>
 
+<!-- Joining -->
 <div class="row explanation">
   <div class="col-lg-6">
     <h5>&nbsp;</h5>
@@ -77,6 +78,38 @@
   </div>
 </div>
 
+<!-- Sensor Updates -->
+<div class="row explanation">
+  <div class="col-lg-6">
+    <h5>&nbsp;</h5>
+    Now the roombot will start to send you sensor updates.
+    These messages tell you what is happening with the roomba.
+  </div>
+
+  <div class="col-lg-6">
+    <h5>Roombot => Your Program</h5>
+    <pre>
+{
+  "topic":"roomba",
+  "ref":null,
+  "payload":{
+    "light_bumper_right_front":0,
+    "light_bumper_right_center":0,
+    "light_bumper_right":0,
+    "light_bumper_left_front":0,
+    "light_bumper_left_center":0,
+    "light_bumper_left":0,
+    "bumper_right":0,
+    "bumper_left":0,
+    "battery_charge":0,
+    "battery_capacity":0
+  },
+  "event":"sensor_update"
+}</pre>
+  </div>
+</div>
+
+<!-- Hearbeats -->
 <div class="row explanation">
   <div class="col-lg-6">
     <h5>&nbsp;</h5>
@@ -101,6 +134,8 @@
   <div class="col-lg-6">
     <h5>&nbsp;</h5>
     The Roombot will send back a <span class="code">phx_reply</span> message to let you know that it got your heartbeat.
+    <br/><br/>
+    Note: I send a hearbeat once per second for most of my driving programs.
   </div>
 
   <div class="col-lg-6">
