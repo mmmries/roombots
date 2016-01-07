@@ -115,6 +115,30 @@
   </div>
 </div>
 
+<!-- Drive Commands -->
+<div class="row explanation">
+  <div class="col-lg-6">
+    <h5>&nbsp;</h5>
+    Once you know where you want to go you can send a drive command.
+    The velocity is measured in mm/s. -500 to 500 are the valid values.
+    The radius is a desired radius you want to turn through. It is measures as mm between the center of the roomba and the center of the turning circle.  Negative values turn left and positive values turn right. -2000 to 2000 are valid values. 0 will drive straight.
+  </div>
+
+  <div class="col-lg-6">
+    <h5>Your Program => Roombot</h5>
+    <pre>
+{
+  "topic":"roomba",
+  "event":"drive",
+  "ref":12,
+  "payload":{
+    "velocity": 100,
+    "radius": -500
+  }
+}</pre>
+  </div>
+</div>
+
 <!-- Hearbeats -->
 <div class="row explanation">
   <div class="col-lg-6">
