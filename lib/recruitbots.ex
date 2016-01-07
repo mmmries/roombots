@@ -9,8 +9,6 @@ defmodule Recruitbots do
     children = [
       # Start the endpoint when the application starts
       supervisor(Recruitbots.Endpoint, []),
-      # Start the Ecto repository
-      supervisor(Recruitbots.Repo, []),
       # Here you could define other workers and supervisors as children
       # worker(Recruitbots.Worker, [arg1, arg2, arg3]),
     ]

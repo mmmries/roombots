@@ -20,10 +20,6 @@ defmodule Recruitbots.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
 
-      alias Recruitbots.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
-
       import Recruitbots.Router.Helpers
 
       # The default endpoint for testing
@@ -32,10 +28,6 @@ defmodule Recruitbots.ConnCase do
   end
 
   setup tags do
-    unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Recruitbots.Repo, [])
-    end
-
     {:ok, conn: Phoenix.ConnTest.conn()}
   end
 end

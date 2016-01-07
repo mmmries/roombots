@@ -20,21 +20,8 @@ defmodule Recruitbots.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias Recruitbots.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
-
-
       # The default endpoint for testing
       @endpoint Recruitbots.Endpoint
     end
-  end
-
-  setup tags do
-    unless tags[:async] do
-      Ecto.Adapters.SQL.restart_test_transaction(Recruitbots.Repo, [])
-    end
-
-    :ok
   end
 end
