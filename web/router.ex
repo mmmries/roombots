@@ -19,8 +19,9 @@ defmodule Recruitbots.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Recruitbots do
-  #   pipe_through :api
-  # end
+  scope "/", Recruitbots do
+     pipe_through :api
+
+    put "/bot_checkin", BotCheckinController, :update
+   end
 end
