@@ -7,7 +7,7 @@
     <meta name="description" content="A project for making iRobot Create 2 robots driveable via websocket">
     <meta name="author" content="Michael Ries (@mmmries)">
 
-    <title>Hello Recruitbots!</title>
+    <title>Roombots!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 

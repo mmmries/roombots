@@ -76,3 +76,44 @@
 }</pre>
   </div>
 </div>
+
+<div class="row explanation">
+  <div class="col-lg-6">
+    <h5>&nbsp;</h5>
+    Sometimes you will want to healthcheck your websocket or just send a small message to keep the network connection active.
+    This will keep the latency low between the roombot and your program.
+    To do this you can send a heartbeat message
+  </div>
+
+  <div class="col-lg-6">
+    <h5>Your Program => Roombot</h5>
+    <pre>
+{
+  "topic":"phoenix",
+  "event":"heartbeat",
+  "payload":{},
+  "ref":"6"
+}</pre>
+  </div>
+</div>
+
+<div class="row explanation">
+  <div class="col-lg-6">
+    <h5>&nbsp;</h5>
+    The Roombot will send back a <span class="code">phx_reply</span> message to let you know that it got your heartbeat.
+  </div>
+
+  <div class="col-lg-6">
+    <h5>Roombot => Your Program</h5>
+    <pre>
+{
+  "topic":"phoenix",
+  "ref":"6",
+  "payload":{
+    "status":"ok",
+    "response":{}
+  },
+  "event":"phx_reply"
+}</pre>
+  </div>
+</div>
