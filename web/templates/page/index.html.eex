@@ -11,6 +11,22 @@
 
 <div class="row explanation message">
   <div class="col-lg-12">
+    <h3>Connecting to the Roombot</h3>
+    <p>
+      Each roombot will have a local ip address.
+      You can find a list of roombots and their local ips on the <a href="/bots">Bots page</a>.
+      Once you know the IP address of a bot you want to connect to you can open a websocket to <span class="code">ws://ROOMBOT-IP-ADDRESS/socket/websocket</span>.
+      <br />
+      Example applications exist that you can use as a starting point:
+    </p>
+    <ul>
+      <li>Ruby: <a href="https://github.com/mmmries/ruby_roombot">https://github.com/mmmries/ruby_roombot</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row explanation message">
+  <div class="col-lg-12">
     <h3>JSON Structure</h3>
     <p>
       All the JSON messages you send to the websocket and receive from the websocket will have a similar structure.
