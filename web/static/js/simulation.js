@@ -3,14 +3,20 @@ const HEIGHT = 750;
 const ROOMBA_RADIUS = WIDTH * 150 / 10000
 
 class Simulation {
-  constructor(canvas_id) {
-    this.canvas = document.getElementById(canvas_id)
+  constructor(canvas, channel) {
+    this.canvas = canvas
+    this.channel = channel
     this.context = this.canvas.getContext("2d")
     this.board = this.generateBoard()
     this.roomba = {x: 5000, y: 5000, heading: 0}
     this.drive = {velocity: 0, radius: 0}
     this.last_updated = new Date()
     this.update()
+
+    let that = this
+    channel.on("drive", function(payload){
+      that.drive = payload
+    })
   }
 
   drawBoard() {

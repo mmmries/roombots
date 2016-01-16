@@ -18,13 +18,16 @@ import "deps/phoenix_html/web/static/js/phoenix_html"
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 
-// import socket from "./socket"
+import socket from "./socket"
 import Simulation from "./simulation"
 window.Simulation = Simulation
 
 // run simulation if there is a canvas
-if(document.getElementById("simulation")){
-  window.sim = new Simulation("simulation")
+let canvas = document.getElementById("simulation")
+if(canvas){
+  let channel = socket.channel("simulator:123", {})
+  channel.join()
+  window.sim = new Simulation(canvas, channel)
   setInterval(function(){
     window.sim.update()
   }, 33);
