@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <header>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A simulator for controlling roombots">
+    <meta name="author" content="Michael Ries (@mmmries)">
+
+    <title>Roombot Simulator</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </header>
+  <body>
+    <div class="container">
+      <%= render @view_module, @view_template, assigns %>
+    </div>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

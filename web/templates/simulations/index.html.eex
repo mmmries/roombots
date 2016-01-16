@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="col-lg-4">
+    <span class="centered">ohai</span>
+  </div>
+  <div class="col-lg-8">
+    <canvas id="simulation" width="750" height="750"></canvas>
+  </div>
+</div>
