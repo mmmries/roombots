@@ -1,6 +1,8 @@
 <div class="row">
   <div class="col-lg-4">
-    <span class="centered">ohai</span>
+    <h2>Instructions</h2>
+    <p>This is simulation where you can practice driving. It isn't a very accurate depiction of the real world, but it lets you test out your code before you connect to an actual Roombot.</p>
+    <p>To connect to this simulator point your websocket connection to <span class="code">ws://roombots.riesd.com/socket/websocket</span> and join the <span class="code">simulation:123</span> channel.</p>
   </div>
   <div class="col-lg-8">
     <canvas id="simulation" width="750" height="750"></canvas>

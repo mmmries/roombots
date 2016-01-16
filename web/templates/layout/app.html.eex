@@ -18,6 +18,7 @@
           <ul class="nav nav-pills pull-right">
             <li><a href="/">Docs</a></li>
             <li><a href="/bots">Bots</a></li>
+            <li><a href="/simulations">Simulator</a></li>
           </ul>
         </nav>
         <span class="logo"></span>
