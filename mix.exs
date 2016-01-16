@@ -17,7 +17,7 @@ defmodule Recruitbots.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Recruitbots, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext]]
+     applications: [:beaker, :phoenix, :phoenix_html, :cowboy, :logger, :gettext]]
   end
 
   # Specifies which paths to compile per environment.
@@ -29,6 +29,7 @@ defmodule Recruitbots.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:beaker, "~> 1.1"},
       {:cowboy, "~> 1.0"},
       {:gettext, "~> 0.9"},
       {:phoenix, "~> 1.1.1"},
