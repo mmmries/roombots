@@ -21,3 +21,11 @@ import "deps/phoenix_html/web/static/js/phoenix_html"
 // import socket from "./socket"
 import Simulation from "./simulation"
 window.Simulation = Simulation
+
+// run simulation if there is a canvas
+if(document.getElementById("simulation")){
+  window.sim = new Simulation("simulation")
+  setInterval(function(){
+    window.sim.update()
+  }, 33);
+}
