@@ -90,20 +90,39 @@ class Simulation {
   }
 
   updateRoomba(interval_ms){
+    let proposal = this.proposedRoombaPosition(interval_ms)
+    if( this.valid(proposal) ){
+      this.roomba = proposal
+    }
+  }
+
+  proposedRoombaPosition(interval_ms){
     if(this.drive.radius == 0){
       let distance = this.drive.velocity * interval_ms / 1000
       let distance_x = distance * Math.cos(this.roomba.heading)
       let distance_y = distance * Math.sin(this.roomba.heading)
-      this.roomba.x += distance_x
-      this.roomba.y += distance_y
+      return {x: this.roomba.x + distance_x, y: this.roomba.y + distance_y, heading: this.roomba.heading}
     } else {
       let distance = this.drive.velocity * interval_ms / 1000
       let circumference = 2 * Math.PI * this.drive.radius * -1
       let percentage = distance / circumference
-      this.roomba.heading += (2 * Math.PI * percentage)
-      this.roomba.x += distance * Math.cos(this.roomba.heading)
-      this.roomba.y += distance * Math.sin(this.roomba.heading)
+      let heading = this.roomba.heading + (2 * Math.PI * percentage)
+      let x = this.roomba.x + (distance * Math.cos(this.roomba.heading))
+      let y = this.roomba.y + (distance * Math.sin(this.roomba.heading))
+      return {x: x, y: y, heading: heading}
     }
+  }
+
+  valid(proposal){
+    let x_coord = Math.round(proposal.x / 100)
+    let y_coord = Math.round(proposal.y / 100)
+    let sum = 0
+    for(var row = -1; row <= 1; row ++){
+      for(var col = -1; col <= 1; col++){
+        sum += this.board[y_coord + row][x_coord + col]
+      }
+    }
+    return sum == 0
   }
 }
 export default Simulation
