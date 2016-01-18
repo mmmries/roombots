@@ -1,3 +1,5 @@
+import Sensors from "./sensors"
+
 const WIDTH = 750;
 const HEIGHT = 750;
 const ROOMBA_RADIUS = WIDTH * 150 / 10000
@@ -10,6 +12,7 @@ class Simulation {
     this.board = this.generateBoard()
     this.roomba = {x: 5000, y: 5000, heading: 0}
     this.drive = {velocity: 0, radius: 0}
+    this.sensors = Sensors.currentSensors(this.roomba, this.board)
     this.last_updated = new Date()
     this.update()
 
@@ -86,6 +89,7 @@ class Simulation {
     let interval = updated_at.getTime() - this.last_updated.getTime()
     this.last_updated = updated_at
     this.updateRoomba(interval)
+    this.updateSensors()
     this.redraw()
   }
 
@@ -123,6 +127,14 @@ class Simulation {
       }
     }
     return sum == 0
+  }
+
+  updateSensors(){
+    let current_sensors = Sensors.currentSensors(this.roomba, this.board)
+    if( !Sensors.sensorsEqual(this.sensors, current_sensors) ){
+      this.sensors = current_sensors
+      this.channel.push("sensor_update", this.sensors)
+    }
   }
 }
 export default Simulation
