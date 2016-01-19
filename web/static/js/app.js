@@ -29,6 +29,6 @@ if(canvas){
   channel.join()
   window.sim = new Simulation(canvas, channel)
   setInterval(function(){
-    window.sim.update()
+    window.sim.update(33)
   }, 33);
 }

@@ -13,8 +13,8 @@ class Simulation {
     this.roomba = {x: 5000, y: 5000, heading: 0}
     this.drive = {velocity: 0, radius: 0}
     this.sensors = Sensors.currentSensors(this.roomba, this.board)
-    this.last_updated = new Date()
-    this.update()
+    this.update(33)
+    this.Sensors = Sensors
 
     let that = this
     channel.on("drive", function(payload){
@@ -84,11 +84,8 @@ class Simulation {
     this.drawRoomba()
   }
 
-  update(){
-    let updated_at = new Date()
-    let interval = updated_at.getTime() - this.last_updated.getTime()
-    this.last_updated = updated_at
-    this.updateRoomba(interval)
+  update(interval_ms){
+    this.updateRoomba(interval_ms)
     this.updateSensors()
     this.redraw()
   }
@@ -123,7 +120,12 @@ class Simulation {
     let sum = 0
     for(var row = -1; row <= 1; row ++){
       for(var col = -1; col <= 1; col++){
-        sum += this.board[y_coord + row][x_coord + col]
+        let x = x_coord + col, y = y_coord + row
+        if (x < 0 || y < 0 || x > 99 || y > 99){
+          sum + 1
+        } else {
+          sum += this.board[y_coord + row][x_coord + col]
+        }
       }
     }
     return sum == 0
