@@ -14,7 +14,6 @@ class Simulation {
     this.drive = {velocity: 0, radius: 0}
     this.sensors = Sensors.currentSensors(this.roomba, this.board)
     this.update(33)
-    this.Sensors = Sensors
 
     let that = this
     channel.on("drive", function(payload){
@@ -64,6 +63,10 @@ class Simulation {
 
   clear(){
     this.context.clearRect(0, 0, WIDTH, HEIGHT);
+  }
+
+  getNeighbors(){
+    return Sensors.getNeighbors(this.roomba, this.board)
   }
 
   generateBoard(){
