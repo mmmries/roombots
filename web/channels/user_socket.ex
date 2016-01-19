@@ -2,7 +2,8 @@ defmodule Recruitbots.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", Recruitbots.RoomChannel
+  channel "simulator:*", Recruitbots.SimulatorChannel
+  channel "simulation:*", Recruitbots.SimulationChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
