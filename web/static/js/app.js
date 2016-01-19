@@ -25,7 +25,8 @@ window.Simulation = Simulation
 // run simulation if there is a canvas
 let canvas = document.getElementById("simulation")
 if(canvas){
-  let channel = socket.channel("simulator:123", {})
+  let simulation_id = canvas.getAttribute('data-simulation-id')
+  let channel = socket.channel("simulator:"+simulation_id, {})
   channel.join()
   window.sim = new Simulation(canvas, channel)
   setInterval(function(){

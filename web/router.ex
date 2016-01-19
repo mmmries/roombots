@@ -21,6 +21,7 @@ defmodule Recruitbots.Router do
     get "/", PageController, :index
     get "/bots", BotCheckinController, :index
     get "/simulations", SimulationsController, :index
+    get "/simulations/:id", SimulationsController, :show
   end
 
   scope "/", Recruitbots do
