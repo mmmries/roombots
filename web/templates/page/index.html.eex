@@ -20,8 +20,9 @@
       Example applications exist that you can use as a starting point:
     </p>
     <ul>
-      <li>Ruby: <a href="https://github.com/mmmries/ruby_roombot">https://github.com/mmmries/ruby_roombot</a></li>
+      <li>Python: <a href="https://github.com/film42/python_roombots">https://github.com/film42/python_roombots</a></li>
       <li>Javascript: <a href="https://github.com/mmmries/browser_roombot">https://github.com/mmmries/browser_roombot</a></li>
+      <li>Ruby: <a href="https://github.com/mmmries/ruby_roombot">https://github.com/mmmries/ruby_roombot</a></li>
       <li>Elixir: <a href="https://github.com/mmmries/elixir_roombot">https://github.com/mmmries/elixir_roombot</a></li>
     </ul>
   </div>
