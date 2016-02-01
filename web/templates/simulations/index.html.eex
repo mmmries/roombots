@@ -1,9 +1,16 @@
 <div class="row" id="maze_types">
-  <div class="col-lg-3">
+  <div class="col-lg-4">
     <a href="/simulations/<%= @generated_id %>?maze=empty">
       <img src="/images/empty_maze.png" alt="empty maze" />
       <br />
       Empty
+    </a>
+  </div>
+  <div class="col-lg-4">
+    <a href="/simulations/<%= @generated_id %>?maze=uturn">
+      <img src="/images/uturn.png" alt="U-Turn" />
+      <br />
+      U-Turn
     </a>
   </div>
 </div>
