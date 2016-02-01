@@ -3,10 +3,11 @@ defmodule Recruitbots.SimulationsController do
 
   def index(conn, %{}) do
     simulation_id = Base.encode64(:crypto.strong_rand_bytes(4))
-    redirect conn, to: "/simulations/#{simulation_id}"
+    render conn, "index.html", generated_id: simulation_id
   end
 
-  def show(conn, %{"id" => id}) do
-    render conn, "index.html", id: id
+  def show(conn, %{"id" => id}=opts) do
+    maze_type = Map.get(opts, "maze", "empty")
+    render conn, "show.html", id: id, maze_type: maze_type
   end
 end
