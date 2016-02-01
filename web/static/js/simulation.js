@@ -9,7 +9,7 @@ class Simulation {
     this.canvas = canvas
     this.channel = channel
     this.context = this.canvas.getContext("2d")
-    this.board = this.generateBoard()
+    this.board = window.maze
     this.roomba = {x: 5000, y: 5000, heading: 0}
     this.drive = {velocity: 0, radius: 0}
     this.sensors = Sensors.currentSensors(this.roomba, this.board)
@@ -67,18 +67,6 @@ class Simulation {
 
   getNeighbors(){
     return Sensors.getNeighbors(this.roomba, this.board)
-  }
-
-  generateBoard(){
-    let board = [], full_row = [], capped_row = [];
-    for(var i = 0; i < 100; i++){ full_row.push(1) }
-    capped_row.push(1)
-    for(var i = 0; i < 98; i++){ capped_row.push(0) }
-    capped_row.push(1)
-    board.push(full_row)
-    for(var i = 0; i < 98; i++){ board.push(capped_row) }
-    board.push(full_row)
-    return board
   }
 
   redraw(){

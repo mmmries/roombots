@@ -8,3 +8,6 @@
     <canvas id="simulation" data-simulation-id="<%= @id %>" width="750" height="750"></canvas>
   </div>
 </div>
+<script>
+  window.maze = <%= Poison.encode!(@maze) %>;
+</script>
