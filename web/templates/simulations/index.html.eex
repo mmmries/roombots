@@ -13,4 +13,11 @@
       U-Turn
     </a>
   </div>
+  <div class="col-lg-4">
+    <a href="/simulations/<%= @generated_id %>?maze=obstacles">
+      <img src="/images/obstacles.png" alt="Obstacles" />
+      <br />
+      Obstacles
+    </a>
+  </div>
 </div>
