@@ -10,7 +10,7 @@ class Simulation {
     this.channel = channel
     this.context = this.canvas.getContext("2d")
     this.board = window.maze
-    this.roomba = {x: 5000, y: 5000, heading: 0}
+    this.roomba = window.initial_position
     this.drive = {velocity: 0, radius: 0}
     this.sensors = Sensors.currentSensors(this.roomba, this.board)
     this.update(33)

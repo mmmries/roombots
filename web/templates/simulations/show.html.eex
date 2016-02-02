@@ -9,5 +9,6 @@
   </div>
 </div>
 <script>
+  window.initial_position = <%= {:safe, Poison.encode!(@initial_position)} %>;
   window.maze = <%= Poison.encode!(@maze) %>;
 </script>
