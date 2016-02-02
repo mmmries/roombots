@@ -35,8 +35,8 @@ class Simulation {
 
   drawCell(context, row, col, cell){
     if(cell == 1){
-      let x = row * (WIDTH / 100)
-      let y = col * (WIDTH / 100)
+      let y = row * (WIDTH / 100)
+      let x = col * (WIDTH / 100)
       context.fillRect(x, y, WIDTH / 100, HEIGHT / 100)
     }
   }
