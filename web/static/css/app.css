@@ -45,12 +45,13 @@ div.row h1,h2,h3,h4,h5 {
   border-bottom: 1px solid #e5e5e5;
 }
 .logo {
+  position: relative;
+  top: 10px;
   width: 80px;
-  height: 71px;
+  height: 80px;
   display: inline-block;
-  margin-bottom: 1em;
   background-image: url("/images/create.png");
-  background-size: 80px 71px;
+  background-size: 80px 80px;
 }
 .page-title {
   font-size: 72px;
