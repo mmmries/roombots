@@ -3,7 +3,7 @@ defmodule Recruitbots.SimulationsController do
   import Recruitbots.Mazes
 
   def index(conn, %{}) do
-    simulation_id = Base.encode64(:crypto.strong_rand_bytes(4))
+    simulation_id = Base.url_encode64(:crypto.strong_rand_bytes(4))
     render conn, "index.html", generated_id: simulation_id
   end
 
