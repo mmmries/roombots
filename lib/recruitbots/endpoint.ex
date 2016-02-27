@@ -3,9 +3,6 @@ defmodule Recruitbots.Endpoint do
 
   socket "/socket", Recruitbots.UserSocket
 
-  # Metrics Tracking For Phoenix
-  plug Beaker.Integrations.Phoenix
-
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest

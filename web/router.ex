@@ -1,8 +1,6 @@
 defmodule Recruitbots.Router do
   use Recruitbots.Web, :router
 
-  forward "/beaker", Beaker.Web
-
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
