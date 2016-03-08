@@ -1,0 +1,31 @@
+<div class="row sensor-row">
+  <div class="col-lg-4 sensor-explanation">
+    <h3>Sensor Types</h3>
+    <span>
+      There are two main types of sensors on the roombot.
+      The physical bump sensors are triggered by running into a wall.
+      The light bumpers are infrared sensors that try to detect objects up to 3 inches beyond the edge of the roombot.
+    </span>
+    <h3>Physical Bumpers</h3>
+    <span>
+      The physical bumpers are pretty simple, but it's worth noting that if you bump into something that is pretty much straight ahead of you, both bumpers will be triggered.
+    </span>
+  </div>
+  <div class="col-lg-8">
+    <img src="/images/sensors_three_quarter_view.png" />
+  </div>
+</div>
+
+<div class="row sensor-row">
+  <div class="col-lg-8">
+    <img src="/images/sensors_top_view.png" />
+  </div>
+  <div class="col-lg-4 sensor-explanation">
+    <h3>Light Bumpers</h3>
+    <span>
+      The light bumpers are arranged around the front edge of the roombot.
+      Light bumpers are not always reliable.
+      Sometimes you may find that a light bumper turns on and off even if the roombot is stationary and not a wall is right in front of it.
+    </span>
+  </div>
+</div>
