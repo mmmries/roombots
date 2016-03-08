@@ -2,7 +2,7 @@ use Mix.Config
 
 config :recruitbots, Recruitbots.Endpoint,
   http: [port: 80],
-  url: [host: {:system, "URL_HOST"}, port: {:system, "URL_PORT"}],
+  url: [host: System.get_env("URL_HOST"), port: System.get_env("URL_PORT")],
   cache_static_manifest: "priv/static/manifest.json"
 
 if System.get_env("SSL_KEY_FILE") do
