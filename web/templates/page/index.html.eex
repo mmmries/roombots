@@ -110,6 +110,8 @@
       <li><span class="code">bumper_*</span> the physical bumper sensors. Also have values of 0 or 1.</li>
       <li><span class="code">battery_*</span> the capacity and current charge of the battery measured in mAh</li>
     </ul>
+
+    For more details please see <a href="/sensors">sensors page</a>.
   </div>
 
   <div class="col-lg-6">

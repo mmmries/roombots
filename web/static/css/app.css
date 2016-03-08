@@ -62,3 +62,21 @@ div.row h1,h2,h3,h4,h5 {
   max-height: 300px;
   max-width: 300px;
 }
+
+/* Sensors Page */
+.sensor-row {
+  height: 500px;
+}
+
+.sensor-explanation {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sensor-row img {
+  max-height: 500px;
+  max-width: 500px;
+}
