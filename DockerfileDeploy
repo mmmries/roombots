@@ -1,0 +1,11 @@
+FROM elixir:1.2.4
+MAINTAINER Michael Ries <michael@riesd.com>
+
+ADD . /roombots
+WORKDIR /roombots
+ENV MIX_ENV=prod
+RUN mix local.hex --force
+RUN mix local.rebar --force
+RUN mix do deps.get --only prod, compile, phoenix.digest
+
+CMD mix phoenix.server
