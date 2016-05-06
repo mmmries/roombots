@@ -1,0 +1,10 @@
+FROM elixir:1.2.4
+MAINTAINER Michael Ries <michael@riesd.com>
+
+WORKDIR /roombots
+ENV MIX_ENV=dev
+RUN apt-get update -qq && apt-get install -y inotify-tools
+RUN mix local.hex --force
+RUN mix local.rebar --force
+
+CMD mix do deps.get, compile, phoenix.server

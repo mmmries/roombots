@@ -1,0 +1,17 @@
+version: '2'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: DockerfileDev
+    volumes:
+    - .:/roombots
+    ports:
+    - "4000:4000"
+    command: mix do deps.get, compile, phoenix.server
+  assets:
+    build:
+      context: .
+      dockerfile: DockerfileAssets
+    volumes:
+    - .:/app
