@@ -80,3 +80,8 @@ div.row h1,h2,h3,h4,h5 {
   max-height: 500px;
   max-width: 500px;
 }
+
+.row .screenshot img {
+  max-height: 100%;
+  max-width: 100%;
+}

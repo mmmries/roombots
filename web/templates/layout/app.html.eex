@@ -17,6 +17,8 @@
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
             <li><a href="/">Docs</a></li>
+            <li><a href="/sensors">Sensors</a></li>
+            <li><a href="/make_your_own">Make Your Own</a></li>
             <li><a href="/bots">Bots</a></li>
             <li><a href="/simulations">Simulator</a></li>
           </ul>
