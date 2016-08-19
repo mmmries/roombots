@@ -9,18 +9,19 @@ defmodule Recruitbots.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", Recruitbots do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
     get "/sensors", PageController, :sensors
+    get "/make_your_own", PageController, :make_your_own
     get "/bots", BotCheckinController, :index
     get "/simulations", SimulationsController, :index
     get "/simulations/:id", SimulationsController, :show
+  end
+
+  pipeline :api do
+    plug :accepts, ["json"]
   end
 
   scope "/", Recruitbots do

@@ -8,4 +8,8 @@ defmodule Recruitbots.PageController do
   def sensors(conn, _params) do
     render conn, "sensors.html"
   end
+
+  def make_your_own(conn, _params) do
+    render conn, "make_your_own.html"
+  end
 end

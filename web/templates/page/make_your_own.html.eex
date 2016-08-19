@@ -1,0 +1,94 @@
+<div class="row">
+  <div class="col-lg-4 sensor-explanation text-left">
+    <h2>Parts List</h2>
+    <ul>
+      <li>~$215 <a href="http://www.irobot.com/About-iRobot/STEM/Create-2.aspx">iRobot Create 2</a></li>
+      <li>~$5-$20 <a href="http://amzn.com/B0128FAE1E">Powerbank supplying USB power</a></li>
+      <li>~$36 <a href="https://amzn.com/B01CD5VC92">Raspberry Pi 3</a></li>
+      <li>~$5 <a href="http://amzn.com/B0027CA7UW">Micro SD Card</a></li>
+      <li>~$5-10 <a href="http://amzn.com/B00S4H4ZTS">Raspberry Pi 3 Case</a> [OPTIONAL]</li>
+    </ul>
+    <strong>
+      Total: ~$280
+    </strong>
+  </div>
+  <div class="col-lg-8 sensor-explanation text-left">
+    <h1>Make Your Own Roombot</h1>
+    <span>
+      We hope that roombots can be used by other groups and we designed them to be very simple.
+      Building a roombot requires no soldering, no programming cables and no custom IDE's or toolchains.
+      This page should give you enough inforation to get a roombot put together and ready to drive remotely.
+    </span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-8 sensor-explanation text-left">
+    <h2>Assembly</h2>
+    <span>
+      Unpack your iRobot create and get the battery charging.
+      While charging you can <a href="https://youtu.be/jjjyZ9RjHPg">remove the top cover to access the serial port</a>.
+      You'll also want to charge up your powerbank / USB battery pack at this time so it will be ready to use.
+    </span>
+    <br />
+    <span>
+      While things are charging you can unpack your raspberry pi and optionally assemble its case.
+      Next you'll want to setup an account on <a href="">resin.io</a>.
+      Then you can follow the <a href="http://docs.resin.io/raspberrypi3/nodejs/getting-started/">getting started instructions</a> to setup your raspberry pi.
+    </span>
+  </div>
+  <div class="col-lg-4 screenshot">
+    <h2>&nbsp;</h2>
+    <img src="/images/resin_signup.png" height="250" />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-4 screenshot">
+    <h2>&nbsp;</h2>
+    <img src="/images/connected_roombot.png" />
+    <small></small>
+  </div>
+  <div class="col-lg-8 sensor-explanation text-left">
+    <h2>Connect Everything</h2>
+    <span>
+      Once you have your raspberry pi working with resin and all the batteries are charged we can connect everything together.
+      First unplug the iRobot Create from the charger.
+      Then get the provided USB to serial cable and connect it to the serial port on top and to one of the USB ports on the raspberry pi.
+      Then connect the raspberry pi to the battery pack and set it on top of the Create.
+    </span>
+    <br />
+    <span>
+      Once your raspberry pi is setup and you can see it in the resin dashboard you are ready to load the <a href="">recruitbot</a> code onto it. You'll want to recruit the "git remote" command from the top-right of your application page on resin.io.
+    </span>
+    <br />
+    <span class="code text-left">
+      $ git clone https://github.com/mmmries/recruitbot.git
+      <br />
+      $ cd recruitbot
+      <br />
+      $ &lt;paste the git remote add command here&gt;
+      <br />
+      $ git push resin master
+    </span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6 sensor-explanation text-left">
+    <h2>Test The Roombot</h2>
+    <span>
+      You should be able to see your device logs in resin.io loading the new image and then grab the IP address of the device and put it into your browser address bar: "http://&lt;device ip address&gt;/".
+      You should now see the status page of your roombot with some buttons for driving it from your browser.
+    </span>
+    <br />
+    <span>
+      If you have problems with any of these instructions feel free to <a href="https://github.com/mmmries/roombots/issues">let us know on our issue list</a>.
+    </span>
+  </div>
+  <div class="col-lg-6 screenshot">
+    <h2>&nbsp;</h2>
+    <img src="/images/roombot_status_page.png" />
+    <small>roombot status page</small>
+  </div>
+</div>
