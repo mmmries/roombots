@@ -21,25 +21,16 @@ When you run the docker image you will need to set the following environment var
 * `SSL_KEY_FILE` __optional__ the SSL key file
 * `SSL_CERT_FILE` __optional__ the SSL cert file
 
-Personally I do this with an nginx config on the docker host like this:
+Personally I do this with a docker command like:
 
 ```
-upstream roombots {
-  server 127.0.0.1:4000 fail_timeout=5s;
-}
-
-server {
-  server_name roombots.riesd.com;
-  listen 80;
-  root /home/ec2-user/www;
-  try_files $uri/index.html $uri.html $uri @app;
-  location @app {
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host $http_host;
-    proxy_pass http://roombots;
-    proxy_http_version 1.1;
-    proxy_set_header Upgrade $http_upgrade;
-    proxy_set_header Connection "upgrade";
-  }
-}
+sudo docker run -d \
+  -p 80:80 \
+  -p 443:443 \
+  -e "SSL_KEY_FILE=/etc/ssl/private/roombots.mx.com.key" \
+  -e "SSL_CERT_FILE=/etc/ssl/certs/roombots.mx.com.pem" \
+  -e "URL_HOST=roombots.mx.com" \
+  -e "URL_PORT=80" \
+  -v /etc/ssl:/etc/ssl \
+  --name roombots hqmq/roombots:0.2.3
 ```
