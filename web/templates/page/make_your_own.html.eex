@@ -88,8 +88,7 @@
   </div>
   <div class="col-lg-6 screenshot">
     <h2>&nbsp;</h2>
-    <img src="/images/roombot_status_page.png" />
-    <small>roombot status page</small>
+    <img style="max-height: 300px;" src="/images/roombot_status_page.png" />
   </div>
 </div>
 
