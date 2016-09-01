@@ -92,3 +92,16 @@
     <small>roombot status page</small>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLItFDtW5mcKq4dvE5unCQGEBIjIxSABgf" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <div class="col-lg-6 sensor-explanation text-left">
+    <h2>Go Drive!</h2>
+    <span>
+      Now that your roombot is ready to drive you can check out some videos of other people trying to solve mazes on youtube.
+      You can also <a href="/">head back to the driving instructions</a> page to get started writing code for your roombot.
+    </span>
+  </div>
+</div>

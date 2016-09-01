@@ -1,5 +1,19 @@
 <div class="row explanation">
   <div class="col-lg-12">
+    <p>
+      This is a project to make it easy to experiment with robotics for people without a background in electronics.
+      <a href="/make_your_own">Building a roombot</a> requires no soldering and no programming cables or low-level languages.
+      After setting up your roombot you can write code on your laptop or your browser to connect to and control the roombot.
+    </p>
+
+    <p>
+      For an example of what you can do with a roombot <a href="https://www.youtube.com/playlist?list=PLItFDtW5mcKq4dvE5unCQGEBIjIxSABgf">check out our youtube videos of people trying to solve mazes</a>.
+    </p>
+  </div>
+</div>
+
+<div class="row explanation">
+  <div class="col-lg-12">
     <h2>Driving Instructions</h3>
     <p>
       Driving a roombot happens over a websocket connection.
